@@ -37,4 +37,10 @@ public class UserController {
     public String test(){
         return "111";
     }
+
+    @ResponseBody
+    @GetMapping("/test2")
+    public String test2(){
+        return "111";
+    }
 }

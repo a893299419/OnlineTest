@@ -1,8 +1,7 @@
-package com.winterchen.controller;
+package com.ot.controller;
 
-import com.github.pagehelper.PageHelper;
-import com.winterchen.model.UserDomain;
-import com.winterchen.service.user.UserService;
+import com.ot.model.UserDomain;
+import com.ot.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;

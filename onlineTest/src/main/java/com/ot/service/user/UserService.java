@@ -1,9 +1,7 @@
-package com.winterchen.service.user;
+package com.ot.service.user;
 
 import com.github.pagehelper.PageInfo;
-import com.winterchen.model.UserDomain;
-
-import java.util.List;
+import com.ot.model.UserDomain;
 
 /**
  * Created by Administrator on 2018/4/19.

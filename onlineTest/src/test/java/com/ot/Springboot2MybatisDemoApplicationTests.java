@@ -1,4 +1,4 @@
-package com.winterchen;
+package com.ot;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

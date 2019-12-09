@@ -1,4 +1,4 @@
-package com.winterchen.model;
+package com.ot.model;
 
 public class UserDomain {
     private Integer userId;

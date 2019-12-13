@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="topMenu">
+
+<nav class="navbar navbar-default navbar-static-top m-b-0">
+
+  <div class="navbar-header">
+    <div class="top-left-part">
+        <a class="logo" href="SystemManagement.html">
+            <b>
+                <img th:src="@{/img/admin-logo.png}" alt="home" class="dark-logo" />
+                <img th:src="@{/img/admin-logo-dark.png}" alt="home" class="light-logo" />
+            </b>
+            <span class="hidden-xs">
+                <img th:src="@{/img/admin-text.png}" alt="home" class="dark-logo" />
+                <img th:src="@{/img/admin-text-dark.png}" alt="home" class="light-logo" />
+            </span>
+        </a>
+    </div>
+
+    <ul class="nav navbar-top-links navbar-right pull-right">
+        <li>
+            <a class="nav-toggler open-close waves-effect waves-light hidden-md hidden-lg"
+               href="javascript:void(0)"><i class="fa fa-bars"></i></a>
+        </li>
+        <li>
+            <a class="profile-pic" href="#"><b class="hidden-xs">Username</b></a>
+        </li>
+    </ul>
+  </div>
+
+</nav>
+
+</div>
+
+</html>

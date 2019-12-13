@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" sizes="16x16" th:href="@{/img/favicon.png}">
+    <title>题库管理</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/sidebar-nav.min.css}" rel="stylesheet">
+    <link th:href="@{/css/animate.css}" rel="stylesheet">
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+    <link th:href="@{/css/default.css}" id="theme" rel="stylesheet">
+
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+</head>
+
+<body class="fix-header">
+
+<div class="preloader">
+    <svg class="circular" viewBox="25 25 50 50">
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+    </svg>
+</div>
+
+<div id="wrapper">
+
+
+    <div th:include="common/top::topMenu"></div>
+
+    <div th:include="common/left_menu::leftMenu"></div>
+
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row bg-title">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title">题库管理</h4> </div>
+                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                    <a href="#" target="_blank" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">新增</a>
+                    <a href="#" target="_blank" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">查找</a>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12">
+                    <div class="white-box">
+                        <h3 class="box-title">试题列表</h3>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>名称</th>
+                                    <th>状态</th>
+                                    <th>描述</th>
+                                    <th>等级</th>
+                                    <th>创建时间</th>
+                                    <th>更新时间</th>
+                                    <th>知识点ID</th>
+                                    <th>正确答案</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>111</td>
+                                    <td>kimmmmm</td>
+                                    <td>active</td>
+                                    <td>descrip</td>
+                                    <td>99</td>
+                                    <td>99</td>
+                                    <td>99</td>
+                                    <td>99</td>
+                                    <td>aaa</td>
+                                    <td><a href="#">修改</a>
+                                        &nbsp
+                                        <a href="#">删除</a> </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="footer text-center"> 2019 &copy;Online Test System</footer>
+    </div>
+
+</div>
+
+
+
+<script th:src="@{/js/jquery.min.js}"></script>
+
+<script th:src="@{/js/bootstrap.min.js}"></script>
+
+<script th:src="@{js/sidebar-nav.min.js}"></script>
+
+<script th:src="@{js/jquery.slimscroll.js}"></script>
+
+<script th:src="@{js/waves.js}"></script>
+
+<script th:src="@{js/custom.min.js}"></script>
+</body>
+
+</html>

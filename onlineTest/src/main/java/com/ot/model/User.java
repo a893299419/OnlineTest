@@ -1,6 +1,7 @@
 package com.ot.model;
 
 import java.util.Date;
+import java.util.List;
 
 public class User {
     private Integer userId;
@@ -10,6 +11,24 @@ public class User {
     private Date createTime;
     private Date updateTime;
     private Integer isDelete;
+    private String salt;
+    private List<Role> roles;
+
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
 
     public Integer getUserId() {
         return userId;
@@ -65,5 +84,9 @@ public class User {
 
     public void setIsDelete(Integer isDelete) {
         this.isDelete = isDelete;
+    }
+
+    public String getCredentialsSalt() {
+        return username + salt + salt;
     }
 }

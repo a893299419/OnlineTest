@@ -2,11 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.ot.dao.UserDao" >
   <sql id="BASE_TABLE">
-    t_user
+    ot_user
   </sql>
 
   <sql id="BASE_COLUMN">
-    userId,userName,password,phone
+    user_id,username,password,gender,createTime,updateTime,is_delete,salt
   </sql>
 
   <insert id="insert" parameterType="com.ot.model.UserDomain">
@@ -26,12 +26,22 @@
     </trim>
   </insert>
 
-  <select id="selectUsers" resultType="com.ot.model.UserDomain">
+  <select id="selectUsers" resultType="com.ot.model.User">
       SELECT
         <include refid="BASE_COLUMN"/>
       FROM
         <include refid="BASE_TABLE"/>
   </select>
+
+  <select id="getUserByName" resultType="com.ot.model.User" parameterType="String">
+    SELECT
+    <include refid="BASE_COLUMN"/>
+    FROM
+    <include refid="BASE_TABLE"/>
+    where
+    username = #{username}
+  </select>
+
 
 
 </mapper>

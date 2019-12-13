@@ -2,11 +2,15 @@ package com.ot.service.user.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.ot.dao.RoleDao;
 import com.ot.dao.UserDao;
+import com.ot.model.User;
 import com.ot.model.UserDomain;
 import com.ot.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
+import org.springframework.util.ObjectUtils;
 
 import java.util.List;
 
@@ -19,6 +23,8 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;//这里会报错，但是并不会影响
 
+    @Autowired
+    private RoleDao roleDao;
     @Override
     public int addUser(UserDomain user) {
 
@@ -38,5 +44,15 @@ public class UserServiceImpl implements UserService {
         List<UserDomain> userDomains = userDao.selectUsers();
         PageInfo result = new PageInfo(userDomains);
         return result;
+    }
+
+    @Override
+    public User findUserByName(String username) {
+        User user=userDao.getUserByName(username);
+        if (ObjectUtils.isEmpty(user)&&CollectionUtils.isEmpty(roleDao.findRoleByUserId(user.getUserId()))){
+            user.setRoles(roleDao.findRoleByUserId(user.getUserId()));
+            return user;
+        }
+        return user;
     }
 }

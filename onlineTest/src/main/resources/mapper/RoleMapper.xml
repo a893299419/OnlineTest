@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ot.dao.RoleDao" >
+  <sql id="BASE_TABLE">
+    ot_role
+  </sql>
+
+  <sql id="BASE_COLUMN">
+    role_id,role_name,role_desc
+  </sql>
+
+  <select id="findRoleByUserId" resultMap="com.ot.model.Role">
+    select * from ot_role t1,ot_user_role t2 where t2.user_id = #{userId} and t1.role_id=t2.role_id
+  </select>
+
+
+
+</mapper>

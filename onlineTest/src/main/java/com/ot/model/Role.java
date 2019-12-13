@@ -1,9 +1,20 @@
 package com.ot.model;
 
+import java.util.List;
+
 public class Role {
     private Integer roleId;
     private String roleName;
     private String roleDesc;
+    private List<Permssion> permissions;
+
+    public List<Permssion> getPermissions() {
+        return permissions;
+    }
+
+    public void setPermissions(List<Permssion> permissions) {
+        this.permissions = permissions;
+    }
 
     public Integer getRoleId() {
         return roleId;

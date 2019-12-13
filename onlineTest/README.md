@@ -7,6 +7,8 @@
 * jdk：1.8.0_40
 * maven:3.3.9
 * alibaba Druid 数据库连接池：1.1.9
+* shiro:1.4.0
+* thymeleaf
 
 ### 额外功能：
 

@@ -45,9 +45,9 @@ public class UserController {
         return "111";
     }
 
-    @GetMapping("index")
+    @GetMapping("/index")
     public String index(Model model){
-        model.addAttribute("user","admin");
-        return "index";
+
+        return "admin_user_list";
     }
 }

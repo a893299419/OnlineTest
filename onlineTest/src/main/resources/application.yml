@@ -3,7 +3,8 @@ server:
 
 
 spring:
-
+    mvc:
+        static-path-pattern: /**
     thymeleaf:
         cache: false
         prefix: classpath:/templates/

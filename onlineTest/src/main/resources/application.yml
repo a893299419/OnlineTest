@@ -3,6 +3,14 @@ server:
 
 
 spring:
+
+    thymeleaf:
+        cache: false
+        prefix: classpath:/templates/
+        suffix: .html
+        encoding: UTF-8
+        servlet-content-type: text/html
+        mode: HTML5
     datasource:
         name: mysql_test
         type: com.alibaba.druid.pool.DruidDataSource
@@ -46,4 +54,3 @@ pagehelper:
     supportMethodsArguments: true
     params: count=countSql
     returnPageInfo: check
-

@@ -43,4 +43,9 @@ public class UserController {
     public String test2(){
         return "111";
     }
+
+    @GetMapping("index")
+    public String index(){
+        return "index";
+    }
 }

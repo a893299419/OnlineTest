@@ -33,10 +33,10 @@ public class UserController {
         return userService.findAllUser(pageNum,pageSize);
     }
 
-    @ResponseBody
+//    @ResponseBody
     @GetMapping("/test")
     public String test(){
-        return "111";
+        return "admin_user_list";
     }
 
     @ResponseBody

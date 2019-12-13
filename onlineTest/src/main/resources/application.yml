@@ -3,15 +3,6 @@ server:
 
 
 spring:
-    mvc:
-        static-path-pattern: /**
-    thymeleaf:
-        cache: false
-        prefix: classpath:/templates/
-        suffix: .html
-        encoding: UTF-8
-        servlet-content-type: text/html
-        mode: HTML5
     datasource:
         name: mysql_test
         type: com.alibaba.druid.pool.DruidDataSource
@@ -21,9 +12,9 @@ spring:
           filters: stat
           driver-class-name: com.mysql.jdbc.Driver
           #基本属性
-          url: jdbc:mysql://47.98.179.96:3306/ot_database?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+          url: jdbc:mysql://127.0.0.1:3306/ot_database?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
           username: root
-          password: root
+          password: jinyi
           #配置初始化大小/最小/最大
           initial-size: 1
           min-idle: 1
@@ -44,7 +35,7 @@ spring:
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.ot.model
+  type-aliases-package: com.winterchen.model
 
 
 
@@ -55,3 +46,4 @@ pagehelper:
     supportMethodsArguments: true
     params: count=countSql
     returnPageInfo: check
+

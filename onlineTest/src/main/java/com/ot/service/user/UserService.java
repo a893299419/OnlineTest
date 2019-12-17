@@ -9,9 +9,11 @@ import com.ot.model.UserDomain;
  */
 public interface UserService {
 
-    int addUser(UserDomain user);
+    int addUser(User user);
 
     PageInfo<UserDomain> findAllUser(int pageNum, int pageSize);
 
     User findUserByName(String username);
+
+    User checkUser(User user);
 }

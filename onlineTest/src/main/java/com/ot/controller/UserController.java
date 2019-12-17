@@ -17,11 +17,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @ResponseBody
-    @PostMapping("/add")
-    public int addUser(UserDomain user){
-        return userService.addUser(user);
-    }
+
 
     @ResponseBody
     @GetMapping("/all")

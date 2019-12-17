@@ -10,11 +10,13 @@ import java.util.List;
 public interface UserDao {
 
 
-    int insert(UserDomain record);
+    int insertUser(User record);
 
 
 
     List<UserDomain> selectUsers();
 
     User getUserByName(String username);
+
+    User checkUser(User user);
 }

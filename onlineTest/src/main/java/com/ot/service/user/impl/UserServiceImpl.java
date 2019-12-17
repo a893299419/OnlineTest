@@ -7,11 +7,15 @@ import com.ot.dao.UserDao;
 import com.ot.model.User;
 import com.ot.model.UserDomain;
 import com.ot.service.user.UserService;
+import com.ot.utils.PasswordHelper;
+import org.apache.shiro.crypto.hash.SimpleHash;
+import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -26,9 +30,10 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private RoleDao roleDao;
     @Override
-    public int addUser(UserDomain user) {
-
-        return userDao.insert(user);
+    public int addUser(User user) {
+        user.setCreateTime(new Date());
+        user.setUpdateTime(new Date());
+        return userDao.insertUser(user);
     }
 
     /*
@@ -55,4 +60,12 @@ public class UserServiceImpl implements UserService {
         }
         return user;
     }
+
+    @Override
+    public User checkUser(User user) {
+
+        return null;
+    }
+
+
 }

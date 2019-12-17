@@ -9,6 +9,15 @@
     user_id,username,password,gender,createTime,updateTime,is_delete,salt
   </sql>
 
+  <sql id="REGISTER_COLUMN">
+    username,password,gender,createTime,updateTime,salt
+  </sql>
+
+  <insert id="insertUser" parameterType="com.ot.model.User">
+    insert into ot_user
+    <include refid="REGISTER_COLUMN"/>
+    VALUES (#{username},#{password},#{gender},#{createTime},#{updateTime},#{salt})
+  </insert>
   <insert id="insert" parameterType="com.ot.model.UserDomain">
     INSERT INTO
       <include refid="BASE_TABLE"/>
@@ -25,6 +34,13 @@
       </if>
     </trim>
   </insert>
+  <select id="checkUser" parameterType="com.ot.model.User" resultType="com.ot.model.User">
+    select
+    <include refid="BASE_COLUMN"/>
+    FROM
+    <include refid="BASE_TABLE"/>
+    where username=#{username} and password=#{password}
+  </select>
 
   <select id="selectUsers" resultType="com.ot.model.User">
       SELECT

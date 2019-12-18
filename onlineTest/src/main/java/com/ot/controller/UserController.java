@@ -17,8 +17,6 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-
-
     @ResponseBody
     @GetMapping("/all")
     public Object findAllUser(
@@ -30,9 +28,16 @@ public class UserController {
     }
 
 //    @ResponseBody
-    @GetMapping("/test")
-    public String test(){
-        return "admin_user_list";
+
+    //加的测试 可以别理我！
+    @GetMapping("/login")
+    public String login(Model model){
+        return "login";
+    }
+    //加的测试 可以别理我！
+    @GetMapping("/register")
+    public String register(Model model){
+        return "register";
     }
 
     @ResponseBody
@@ -43,7 +48,6 @@ public class UserController {
 
     @GetMapping("/index")
     public String index(Model model){
-
         return "admin_user_list";
     }
 }

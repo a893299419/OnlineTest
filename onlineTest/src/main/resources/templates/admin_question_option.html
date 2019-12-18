@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head>
+<head th:include="common/common_css::commonCss">
     <meta charset="utf-8">
     <link rel="icon" type="image/png" sizes="16x16" th:href="@{/img/favicon.png}">
     <title>试题选项管理</title>
-    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
-    <link th:href="@{/css/sidebar-nav.min.css}" rel="stylesheet">
-    <link th:href="@{/css/animate.css}" rel="stylesheet">
-    <link th:href="@{/css/style.css}" rel="stylesheet">
-    <link th:href="@{/css/default.css}" id="theme" rel="stylesheet">
 
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -37,7 +32,6 @@
                     <h4 class="page-title">试题选项管理</h4> </div>
                 <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                     <a href="#" target="_blank" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">新增</a>
-                    <a href="#" target="_blank" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">查找</a>
 
                 </div>
 
@@ -66,9 +60,10 @@
                                     <td>2</td>
                                     <td class="txt-oflo">April 18, 2017</td>
                                     <td class="txt-oflo">April 18, 2017</td>
-                                    <td><a href="#" class="btn btn-sm btn-primary">>修改</a>
-                                        &nbsp
-                                        <a href="#" class="btn btn-sm btn-primary">>删除</a> </td>
+                                    <td>
+                                        <button type="button" class="btn btn-warning updateBtn" data-id="3">修改</button>
+                                        <button data-id="3" type="button" class="btn btn-danger deleteBtn">删除</button>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
@@ -77,9 +72,10 @@
                                     <td class="txt-oflo">April 18, 2017</td>
                                     <td>2</td>
                                     <td class="txt-oflo">April 18, 2017</td>
-                                    <td><a href="#" class="btn btn-sm btn-primary">>修改</a>
-                                        &nbsp
-                                        <a href="#" class="btn btn-sm btn-primary">>删除</a> </td>
+                                    <td>
+                                        <button type="button" class="btn btn-warning updateBtn" data-id="3">修改</button>
+                                        <button data-id="3" type="button" class="btn btn-danger deleteBtn">删除</button>
+                                    </td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -94,19 +90,7 @@
     </div>
 
 </div>
-
-
-<script th:src="@{/js/jquery.min.js}"></script>
-
-<script th:src="@{/js/bootstrap.min.js}"></script>
-
-<script th:src="@{/js/sidebar-nav.min.js}"></script>
-
-<script th:src="@{/js/jquery.slimscroll.js}"></script>
-
-<script th:src="@{/js/waves.js}"></script>
-
-<script th:src="@{/js/custom.min.js}"></script>
+<div th:include="common/common_js::commonJs"></div>
 </body>
 
 </html>

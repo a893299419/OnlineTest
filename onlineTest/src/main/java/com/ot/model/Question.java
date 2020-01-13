@@ -1,8 +1,12 @@
 package com.ot.model;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Date;
 
 public class Question {
+    @Id
+    @GeneratedValue(generator = "JDBC")
     private Integer id;
     private String questionName;
     private Integer status;

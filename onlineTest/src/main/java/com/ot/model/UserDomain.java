@@ -1,6 +1,11 @@
 package com.ot.model;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 public class UserDomain {
+    @Id
+    @GeneratedValue(generator = "JDBC")
     private Integer userId;
 
     private String userName;

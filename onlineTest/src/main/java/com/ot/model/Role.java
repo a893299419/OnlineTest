@@ -1,8 +1,12 @@
 package com.ot.model;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.List;
 
 public class Role {
+    @Id
+    @GeneratedValue(generator = "JDBC")
     private Integer roleId;
     private String roleName;
     private String roleDesc;

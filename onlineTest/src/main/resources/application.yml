@@ -12,6 +12,7 @@ spring:
         encoding: UTF-8
         servlet-content-type: text/html
         mode: HTML5
+
     datasource:
         name: mysql_test
         type: com.alibaba.druid.pool.DruidDataSource
@@ -56,3 +57,9 @@ pagehelper:
     params: count=countSql
     returnPageInfo: check
 
+
+#mapper
+mapper:
+  mappers: tk.mybatis.mapper.common.Mapper
+  not-empty: false
+  identity: MYSQL

@@ -1,6 +1,11 @@
 package com.ot.model;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 public class Permssion {
+    @Id
+    @GeneratedValue(generator = "JDBC")
     private Integer id;
     private String name;
 
